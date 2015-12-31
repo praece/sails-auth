@@ -1,5 +1,5 @@
 {
-  "name": "sails-auth",
+  "name": "praece-sails-auth",
   "version": "0.2.0",
   "description": "Add auth0 token auth.",
   "main": "index.js",
