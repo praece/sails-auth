@@ -3,8 +3,8 @@ var	BearerStrategy = require('passport-http-bearer').Strategy;
 var	jwt = require('jsonwebtoken');
 
 passport.use(new BearerStrategy({}, function(token, done) {
-  var secret = new Buffer(sails.config.tokenauth.secret, 'base64');
-  var audience = sails.config.tokenauth.audience;
+  var secret = new Buffer(sails.config.auth.secret, 'base64');
+  var audience = sails.config.auth.audience;
 
   jwt.verify(token, secret, {audience: audience}, function(err, decoded) {
     if (err) {

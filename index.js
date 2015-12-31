@@ -9,7 +9,7 @@ module.exports = function (sails) {
 
   return {
     defaults: {
-      __configKey__: {
+      auth: {
         secret: null,
         audience: null
       }
