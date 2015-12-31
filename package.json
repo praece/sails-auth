@@ -1,6 +1,6 @@
 {
   "name": "@praece/sails-hook-tokenauth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Add auth0 token auth.",
   "main": "index.js",
   "author": "Praece Consulting",
