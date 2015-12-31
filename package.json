@@ -1,16 +1,12 @@
 {
-  "name": "@praece/sails-hook-tokenauth",
+  "name": "praece-sails-auth",
   "version": "0.2.0",
   "description": "Add auth0 token auth.",
   "main": "index.js",
   "author": "Praece Consulting",
-  "keywords": [
-    "sails-hook-tokenauth",
-    "praece"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/praece/sails-hook-tokenauth"
+    "url": "https://github.com/praece/praece-sails-auth"
   },
   "devDependencies": {
     "sails": "~0.11.0"
