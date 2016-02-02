@@ -16,13 +16,13 @@ passport.use(new BearerStrategy({}, function(token, done) {
       if (config.findUser) {
         promise = config.findUser(decoded.email);
       } else {
-        promise = User.findOne({email: decoded.email});
+        promise = User.where('email', decoded.email).fetch();
       }
 
       promise
         .then(function(user){
           if (!user) { return done(null, false); }
-          return done(null, user, {});
+          return done(null, user.toJSON(), {});
         })
         .catch(done);
     }
