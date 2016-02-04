@@ -3,7 +3,7 @@ var _ = require('lodash');
 
 // Add our general custom policies.
 var policies = {
-  '*': ['token']
+  '*': false
 };
 
 // Disable delete by default for all controllers.
