@@ -1,6 +1,6 @@
 {
   "name": "praece-sails-auth",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Add auth0 token auth.",
   "main": "index.js",
   "author": "Praece Consulting",
@@ -15,7 +15,8 @@
     "jsonwebtoken": "^5.5.0",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
-    "sails-util-mvcsloader": "~0.3.0"
+    "sails-util-mvcsloader": "~0.3.0",
+    "lodash": "^4.3.0"
   },
   "sails": {
     "isHook": true
