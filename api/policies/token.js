@@ -9,11 +9,6 @@ module.exports = function (req, res, done) {
     req.login(user, {session: false}, function(err) {
       if (err) { return done(err); }
 
-      if (sails.config.auth.includeCreatedBy) {
-        req.options.values = req.options.values || {};
-        req.options.values.createdBy = user.id;      
-      }
-
       done();
     });
   })(req, res, done);
