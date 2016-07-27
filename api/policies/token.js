@@ -6,6 +6,12 @@ module.exports = function (req, res, done) {
     if (err) return res.forbidden(err);
     if (!user) return res.forbidden({message: 'You are not authorized to access this page!'});
 
+    if (!req.login) {
+      req.user = user;
+
+      return done();
+    }
+
     req.login(user, {session: false}, function(err) {
       if (err) { return done(err); }
 
