@@ -6,6 +6,7 @@ module.exports = function (req, res, done) {
     if (err) return res.forbidden(err);
     if (!user) return res.forbidden({message: 'You are not authorized to access this page!'});
 
+    // If this is a socket request we don't have req.login, so fake it
     if (!req.login) {
       req.user = user;
 
