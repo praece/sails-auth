@@ -13,16 +13,16 @@ module.exports = function (sails) {
         secret: null,
         audience: null
       }
-    },
-    initialize: function (next) {
-      // Load controllers, models & services from default directories
-      loader.adapt({
-        controllers: __dirname + '/controllers', // Path to the controllers to load
-        models: __dirname + '/models', // Path to the models to load
-        services: __dirname + '/services' // Path to the services to load
-      }, function (err) {
-        return next(err);
-      });
     }
+    // initialize: function (next) {
+    //   // Load controllers, models & services from default directories
+    //   loader.adapt({
+    //     controllers: __dirname + '/controllers', // Path to the controllers to load
+    //     models: __dirname + '/models', // Path to the models to load
+    //     services: __dirname + '/services' // Path to the services to load
+    //   }, function (err) {
+    //     return next(err);
+    //   });
+    // }
   };
 };
