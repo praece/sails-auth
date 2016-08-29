@@ -30,5 +30,8 @@ passport.use(new BearerStrategy({}, function(token, done) {
 }));
 
 module.exports.http = {
-  middleware: passport.initialize()
+  middleware: {
+    order: ['passport'],
+    passport: passport.initialize()
+  }
 };
