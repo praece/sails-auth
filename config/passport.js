@@ -19,7 +19,7 @@ passport.use(new BearerStrategy({}, function(token, done) {
         promise = User.where('email', decoded.email).fetch();
       }
 
-      promise
+      return promise
         .then(function(user){
           if (!user) { return done(null, false); }
           return done(null, user.toJSON(), {});
