@@ -6,7 +6,7 @@ passport.use(new BearerStrategy({}, function(token, done) {
   var config = sails.config.auth;
   var options = config.options || { algorithms: ['HS256'], audience: config.audience };
 
-  if (process.env.NODE_ENV !== 'test') options.maxAge = '10h';
+  if (process.env.NODE_ENV !== 'test' && !config.options) options.maxAge = '24h';
 
   jwt.verify(token, new Buffer(config.secret, 'base64'), options, function(err, decoded) {
     // Error decoding the token
