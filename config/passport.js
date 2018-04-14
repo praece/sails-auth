@@ -4,9 +4,9 @@ var jwt = require('jsonwebtoken');
 
 passport.use(new BearerStrategy({}, function(token, done) {
   var config = sails.config.auth;
-  var options = config.options || { algorithms: ['HS256'], audience: config.audience };
+  var options = config.options || { algorithms: ['HS256'], audience: config.audience, maxAge: '24h' };
 
-  if (process.env.NODE_ENV !== 'test' && !config.options) options.maxAge = '24h';
+  if (process.env.NODE_ENV === 'test') delete options.maxAge;
 
   jwt.verify(token, new Buffer(config.secret, 'base64'), options, function(err, decoded) {
     // Error decoding the token
