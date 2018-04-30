@@ -1,10 +1,11 @@
 var passport = require('passport');
 var BearerStrategy = require('passport-http-bearer').Strategy;
 var jwt = require('jsonwebtoken');
+var _ = require('lodash');
 
-passport.use(new BearerStrategy({}, function(token, done) {
+passport.use(new BearerStrategy({ passReqToCallback: true }, function(req, token, done) {
   var config = sails.config.auth;
-  var options = config.options || { algorithms: ['HS256'], audience: config.audience, maxAge: '24h' };
+  var options = _.assign({ algorithms: ['HS256'], audience: config.audience, maxAge: '24h' }, config.options, _.get(req, '_authOptions', {}));
 
   if (process.env.NODE_ENV === 'test') delete options.maxAge;
 
